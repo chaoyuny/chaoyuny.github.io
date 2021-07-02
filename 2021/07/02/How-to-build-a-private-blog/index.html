@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="How to build a private blog, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>How to build a private blog | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">How to build a private blog</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/blog/">
+                                <span class="chip bg-color">blog</span>
+                            </a>
+                        
+                            <a href="/tags/study/">
+                                <span class="chip bg-color">study</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -457,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    75
+                    314
                 </div>
                 
 
@@ -487,19 +495,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="1-Software-install"><a href="#1-Software-install" class="headerlink" title="1 Software install"></a>1 Software install</h2><p>1.1 Nodejs,<a target="_blank" rel="noopener" href="https://nodejs.org/dist/v14.17.1/node-v14.17.1-x64.msi">click here to download</a><br>1.2 Git,<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">click here to download</a></p>
+<h2 id="2-Construct"><a href="#2-Construct" class="headerlink" title="2 Construct"></a>2 Construct</h2><h3 id="2-1-Run-in-“Git”"><a href="#2-1-Run-in-“Git”" class="headerlink" title="2.1 Run in “Git”"></a>2.1 Run in “Git”</h3><p>Check the version for node and npm</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo node -v
+$ hexo npm -v
+$ npm install # 切换到自己博客的目录下并执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-2-Install-the-“cnpm”-and-“hexo-cli”"><a href="#2-2-Install-the-“cnpm”-and-“hexo-cli”" class="headerlink" title="2.2 Install the “cnpm” and “hexo-cli”"></a>2.2 Install the “cnpm” and “hexo-cli”</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org
+$ hexo cnpm -v
+$ cnpm install -g hexo-cli
+$ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-3-constract-a-local-service-for-“Myblog”"><a href="#2-3-constract-a-local-service-for-“Myblog”" class="headerlink" title="2.3 constract a local service for “Myblog”"></a>2.3 constract a local service for “Myblog”</h3><p>To construct and start a “Myblog”</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mkdir Myblog
+$ cd Myblog
+$ hexo init #初始化自己的博客
+$ hexo s # 运行自己的博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Check “Myblog” in browser with the below address</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ http:&#x2F;&#x2F;localhost:4000&#x2F; #可以直接在浏览器中打开刚刚的博客<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>Write a article</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo n filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>To update the content for “Myblog”</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean
+$ hexo g
+$ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>###2.4 Create a blog home based on Github</p>
+<p>Fist,Create a new  respository “YourGithubName.github.io”</p>
+<p>Second, install a “git” plugin</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install --save hexo-deployer-git # 必须要安装该插件才可以部署到github
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Third, Configure the file “config.yml” in your dir for Myblog as followings</p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a target="_blank" rel="noopener" href="https://hexo.io/docs/deployment.html">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type: git<br>repo: <a target="_blank" rel="noopener" href="https://github.com/YourGithubName/YourGithubName.github.io.git">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master<br>Fourth, if your PC is Win10,you should execute these codes</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install --save hexo-deployer-git # install deployer for uploading
+$ git config --global user.email xxx
+$ git config --global user.name xxx
+$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="3-beautify-your-blog-layout"><a href="#3-beautify-your-blog-layout" class="headerlink" title="3 beautify your blog layout"></a>3 beautify your blog layout</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia
+$ hexo c
+$ hexo g
+$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Note: you should modify the file “config.yml” as below:</p>
+<p>theme: yilia</p>
 
                 
             </div>
@@ -526,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/02/hello-world/">http://example.com/2021/07/02/hello-world/</a>
+                    <a href="http://example.com/2021/07/02/How-to-build-a-private-blog/">http://example.com/2021/07/02/How-to-build-a-private-blog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -563,7 +606,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/blog/">
+                                    <span class="chip bg-color">blog</span>
+                                </a>
+                            
+                                <a href="/tags/study/">
+                                    <span class="chip bg-color">study</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -731,9 +782,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/07/02/How-to-build-a-private-blog/">
                     <div class="card-image">
@@ -751,9 +803,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -762,6 +814,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -781,7 +834,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/07/02/hello-world/">
@@ -811,7 +864,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
