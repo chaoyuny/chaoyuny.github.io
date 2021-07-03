@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>VScode连接远程服务器教程</title>
+      <link href="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/"/>
+      <url>/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-下载VSCode"><a href="#1-下载VSCode" class="headerlink" title="1. 下载VSCode"></a>1. 下载VSCode</h2><p>VSCode：<a href="https://code.visualstudio.com/docs/?dv=win">点我下载</a></p><p>安装OpenSSH</p><pre class="line-numbers language-b" data-language="b"><code class="language-b">win+x #随后选择Windows PoweShell（管理员）Get-WindowsCapability -Online | ? Name -like &#39;OpenSSH*&#39;#如果未安装，则输入Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="2-配置远程服务器"><a href="#2-配置远程服务器" class="headerlink" title="2. 配置远程服务器"></a>2. 配置远程服务器</h2><h3 id="2-1-搜索并安装remote-development插件"><a href="#2-1-搜索并安装remote-development插件" class="headerlink" title="2.1 搜索并安装remote development插件"></a>2.1 搜索并安装remote development插件</h3><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703221512599-1625321714218.png" alt="image-20210703221512599"></p><h3 id="2-2-配置config文件"><a href="#2-2-配置config文件" class="headerlink" title="2.2 配置config文件"></a>2.2 配置config文件</h3><p>按照下图所示顺序，调出<em><strong>config</strong></em>配置文件；</p><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222054154-1625322055588.png" alt="image-20210703222054154"></p><p>修改或增加下列内容，Host名字徐亚自己起一个，Hostname就是服务器的地址，User是自己在服务器上的用户名。</p><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222218598-1625322140369.png" alt="image-20210703222218598"></p><p>配置完成后，在左侧可以看到我们的用户名，按照图示顺序，选择<em><strong>linux</strong></em>,如下图：</p><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222522950-1625322324487.png" alt="image-20210703222522950"></p><p>点击以后就出现下面输入账号密码的界面，输入后等待就好了</p><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222715094-1625322437153.png" alt="image-20210703222715094"></p><p>好了，这个东西只能说看你运气，可能笔记本不一样 ，  需要的支持插件不一样，如果上述不能解决你的问题，请联系我。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux 专栏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> 服务器 </tag>
+            
+            <tag> vscode </tag>
+            
+            <tag> 编辑器 </tag>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于R语言的样本聚类-2</title>
       <link href="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/"/>
       <url>/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/</url>
@@ -22,13 +55,13 @@
             
             <tag> R语言 </tag>
             
-            <tag> 转录组数据 </tag>
-            
             <tag> 聚类分析 </tag>
             
             <tag> 数据分析 </tag>
             
             <tag> 生物信息学 </tag>
+            
+            <tag> 转录组数据 </tag>
             
             <tag> 相关性分析 </tag>
             
@@ -57,13 +90,13 @@
             
             <tag> R语言 </tag>
             
-            <tag> 转录组数据 </tag>
-            
             <tag> 聚类分析 </tag>
             
             <tag> 数据分析 </tag>
             
             <tag> 生物信息学 </tag>
+            
+            <tag> 转录组数据 </tag>
             
         </tags>
       
@@ -124,15 +157,15 @@
       
         <tags>
             
+            <tag> R语言 </tag>
+            
+            <tag> 转录组数据 </tag>
+            
             <tag> 热图 </tag>
             
             <tag> 差异基因 </tag>
             
             <tag> 转录组数据可视化 </tag>
-            
-            <tag> R语言 </tag>
-            
-            <tag> 转录组数据 </tag>
             
         </tags>
       

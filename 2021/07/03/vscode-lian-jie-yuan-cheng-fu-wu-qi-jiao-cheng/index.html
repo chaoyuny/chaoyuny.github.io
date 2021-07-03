@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, MyBio">
+    <meta name="keywords" content="VScode连接远程服务器教程, MyBio">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | MyBio</title>
+    <title>VScode连接远程服务器教程 | MyBio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">VScode连接远程服务器教程</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,41 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">服务器</span>
+                            </a>
+                        
+                            <a href="/tags/vscode/">
+                                <span class="chip bg-color">vscode</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/">
+                                <span class="chip bg-color">编辑器</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/linux-%E4%B8%93%E6%A0%8F/" class="post-category">
+                                linux 专栏
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,21 +472,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    233
                 </div>
                 
 
@@ -487,19 +516,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="1-下载VSCode"><a href="#1-下载VSCode" class="headerlink" title="1. 下载VSCode"></a>1. 下载VSCode</h2><p>VSCode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/?dv=win">点我下载</a></p>
+<p>安装OpenSSH</p>
+<pre class="line-numbers language-b" data-language="b"><code class="language-b">win+x #随后选择Windows PoweShell（管理员）
+Get-WindowsCapability -Online | ? Name -like &#39;OpenSSH*&#39;
+#如果未安装，则输入
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="2-配置远程服务器"><a href="#2-配置远程服务器" class="headerlink" title="2. 配置远程服务器"></a>2. 配置远程服务器</h2><h3 id="2-1-搜索并安装remote-development插件"><a href="#2-1-搜索并安装remote-development插件" class="headerlink" title="2.1 搜索并安装remote development插件"></a>2.1 搜索并安装remote development插件</h3><p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703221512599-1625321714218.png" alt="image-20210703221512599"></p>
+<h3 id="2-2-配置config文件"><a href="#2-2-配置config文件" class="headerlink" title="2.2 配置config文件"></a>2.2 配置config文件</h3><p>按照下图所示顺序，调出<em><strong>config</strong></em>配置文件；</p>
+<p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222054154-1625322055588.png" alt="image-20210703222054154"></p>
+<p>修改或增加下列内容，Host名字徐亚自己起一个，Hostname就是服务器的地址，User是自己在服务器上的用户名。</p>
+<p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222218598-1625322140369.png" alt="image-20210703222218598"></p>
+<p>配置完成后，在左侧可以看到我们的用户名，按照图示顺序，选择<em><strong>linux</strong></em>,如下图：</p>
+<p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222522950-1625322324487.png" alt="image-20210703222522950"></p>
+<p>点击以后就出现下面输入账号密码的界面，输入后等待就好了</p>
+<p><img src="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/image-20210703222715094-1625322437153.png" alt="image-20210703222715094"></p>
+<p>好了，这个东西只能说看你运气，可能笔记本不一样 ，  需要的支持插件不一样，如果上述不能解决你的问题，请联系我。</p>
 
                 
             </div>
@@ -526,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/02/hello-world/">http://example.com/2021/07/02/hello-world/</a>
+                    <a href="http://example.com/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/">http://example.com/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -563,7 +598,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">服务器</span>
+                                </a>
+                            
+                                <a href="/tags/vscode/">
+                                    <span class="chip bg-color">vscode</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/">
+                                    <span class="chip bg-color">编辑器</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -731,17 +786,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/02/how-to-build-a-private-blog/">
+                <a href="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="How to build a private blog">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="VScode连接远程服务器教程">
                         
-                        <span class="card-title">How to build a private blog</span>
+                        <span class="card-title">VScode连接远程服务器教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -751,30 +807,43 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            chaoyuny
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux-%E4%B8%93%E6%A0%8F/" class="post-category">
+                                    linux 专栏
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/study/">
-                        <span class="chip bg-color">study</span>
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
                     </a>
                     
-                    <a href="/tags/knowledge/">
-                        <span class="chip bg-color">knowledge</span>
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/">
+                        <span class="chip bg-color">编辑器</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>
@@ -788,13 +857,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/">
+                <a href="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="用R语言如何画一张漂亮的热图">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="基于R语言的样本聚类-2">
                         
-                        <span class="card-title">用R语言如何画一张漂亮的热图</span>
+                        <span class="card-title">基于R语言的样本聚类-2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,7 +874,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
                             </span>
                         <span class="publish-author">
                             
@@ -826,20 +895,24 @@
                         <span class="chip bg-color">R语言</span>
                     </a>
                     
+                    <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">聚类分析</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                        <span class="chip bg-color">生物信息学</span>
+                    </a>
+                    
                     <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
                         <span class="chip bg-color">转录组数据</span>
                     </a>
                     
-                    <a href="/tags/%E7%83%AD%E5%9B%BE/">
-                        <span class="chip bg-color">热图</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B7%AE%E5%BC%82%E5%9F%BA%E5%9B%A0/">
-                        <span class="chip bg-color">差异基因</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">
-                        <span class="chip bg-color">转录组数据可视化</span>
+                    <a href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">相关性分析</span>
                     </a>
                     
                 </div>
