@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, MyBio">
+    <meta name="keywords" content="基于R语言的样本聚类-1, MyBio">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | MyBio</title>
+    <title>基于R语言的样本聚类-1 | MyBio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">基于R语言的样本聚类-1</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,41 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/R%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">R语言</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">聚类分析</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">数据分析</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                                <span class="chip bg-color">生物信息学</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">转录组数据</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E4%B8%93%E6%A0%8F/" class="post-category">
+                                R语言专栏
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,28 +472,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    733
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -487,19 +516,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="1-1-聚类和分类"><a href="#1-1-聚类和分类" class="headerlink" title="1.1 聚类和分类"></a>1.1 聚类和分类</h3><p>有人会觉得<strong>聚类</strong>就是<strong>分类</strong>，而其实在严格意义上，聚类与分类并不是一回事，两者有着很大的差异。</p>
+<p>分类是按照已定的程序模式和标准进行判断划分，如<strong>男人</strong>和<strong>女人</strong>，在这里，你可以理解为这是<strong>分类/分组数据</strong>（注意了，不同的数据类型有不同的检验方法哟）。再比如，我们直接规定把数据的平均值作为中心轴，那么我们可以把这一组数据分为两个组别，即高于平均和等于平均的两个组，这也是分类。顺便扩展一下，我们后期会讲一期<strong>单基因GESA分析</strong>，用到的分组原理大概就是这个呢。<strong>因此，分类是按照固有或者某个标准将数据进行分组</strong>。</p>
+<p>而聚类则分析，事先我们并不知道具体的划分标准，要靠算法进行判断数据之间的相似性，把相似的数据放在一起，也就是说聚类最关键的工作是：<em><strong>探索和挖掘数据中的潜在差异和联系</strong></em>。</p>
+<p>在聚类的结论出来之前，我完全不知道每一类有什么特点，一定要根据聚类的结果通过人的经验来分析，看看聚成的这一类大概有什么特点。</p>
+<h3 id="1-2-聚类的方法"><a href="#1-2-聚类的方法" class="headerlink" title="1.2 聚类的方法"></a>1.2 聚类的方法</h3><p>关于聚类的各种算法，推荐知乎的一篇文章<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/104355127">点我学习，下例图片来源于知乎</a>。</p>
+<img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/image-20210703122657356-1625286420689.png" alt="image-20210703122657356" style="zoom:50%;">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-聚类在R语言中的实现"><a href="#2-聚类在R语言中的实现" class="headerlink" title="2 聚类在R语言中的实现"></a>2 聚类在R语言中的实现</h2><h3 id="2-1-包的安装"><a href="#2-1-包的安装" class="headerlink" title="2.1 包的安装"></a>2.1 包的安装</h3><p>这里，我们首先用到两个包，第一个是<strong>WGCNA</strong>，第二个是<strong>openxlsx</strong>，加载它们：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># Load the WGCNA package
+library(openxlsx) # 导入Excel数据
+library(WGCNA) # 画聚类图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果还没有安装这两个包，安装方法请移步我的另一篇博文<a target="_blank" rel="noopener" href="https://chaoyuny.github.io/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/">用R语言如何画一张漂亮的热图</a>。</p>
+<h3 id="2-2-数据读入"><a href="#2-2-数据读入" class="headerlink" title="2.2 数据读入"></a>2.2 数据读入</h3><p>先上数据格式，见下图：</p>
+<p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/image-20210703151850922-1625296732671.png" alt="image-20210703151850922"></p>
+<p>再上代码：</p>
+<pre class="line-numbers language-b" data-language="b"><code class="language-b">dat &lt;- read.xlsx(&quot;filename.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将上述矩阵转置并转化为数据框</p>
+<pre class="line-numbers language-ba" data-language="ba"><code class="language-ba">datExpr0 &#x3D; as.data.frame(t(dat[,]))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>转置之后数据格式如下图，行名是样本名，列名是基因名：</p>
+<p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/image-20210703153427860-1625297669794.png" alt="image-20210703153427860"></p>
+<h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><p>如下就可以画图啦</p>
+<pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">sampleTree &#x3D; hclust(dist(datExpr0), method &#x3D; &quot;average&quot;) # 选择计算中心距方法
+sizeGrWindow(16,9) # 设置画图框的大小
+par(mar &#x3D; c(4,4,4,4)) # 设置边距，根据实际情况选择
+plot(sampleTree, 
+     main &#x3D; &quot;Filemane&quot;,#图名字
+     sub&#x3D;&quot;&quot;, # 标题名字
+     xlab&#x3D;&quot;&quot;, # X轴名字
+     cex.lab &#x3D; 1.5, # X轴Y轴名字大小
+     cex.axis &#x3D; 1.5, #Y轴刻度大小大小
+     cex.main &#x3D; 1.5) #标题大小
+dev.off() # 关闭画图装置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上述可以画的是聚类树，效果图如下：</p>
+<p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/image-20210703154332418-1625298214047.png" alt="image-20210703154332418"></p>
+<p>下一期我们做样本间的各种相关图，期待与您下次再见~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 
                 
             </div>
@@ -526,7 +581,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/02/hello-world/">http://example.com/2021/07/02/hello-world/</a>
+                    <a href="http://example.com/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/">http://example.com/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -563,7 +618,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/R%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">R语言</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">聚类分析</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">数据分析</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                                    <span class="chip bg-color">生物信息学</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">转录组数据</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -732,7 +807,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-07-02T10-39-26',
+        id: '2021-07-03T11-48-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -756,7 +831,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Fri Jul 02 2021 10:39:26 GMT+0800',
+    id: 'Sat Jul 03 2021 11:48:09 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -781,9 +856,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://example.com/2021/07/02/hello-world/';
-        this.page.identifier = '/2021/07/02/hello-world/';
-        this.page.title = 'Hello World';
+        this.page.url = 'http://example.com/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/';
+        this.page.identifier = '/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/';
+        this.page.title = '基于R语言的样本聚类-1';
     };
     let disqus_shortname = '';
 
@@ -833,9 +908,76 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="基于R语言的样本聚类-1">
+                        
+                        <span class="card-title">基于R语言的样本聚类-1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E4%B8%93%E6%A0%8F/" class="post-category">
+                                    R语言专栏
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/R%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">R语言</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">聚类分析</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                        <span class="chip bg-color">生物信息学</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">转录组数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/07/02/how-to-build-a-private-blog/">
                     <div class="card-image">
@@ -853,9 +995,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -877,71 +1019,6 @@ gitment.render('gitment-content');
                     
                     <a href="/tags/knowledge/">
                         <span class="chip bg-color">knowledge</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="用R语言如何画一张漂亮的热图">
-                        
-                        <span class="card-title">用R语言如何画一张漂亮的热图</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E4%B8%93%E6%A0%8F/" class="post-category">
-                                    R语言专栏
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/R%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">R语言</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
-                        <span class="chip bg-color">转录组数据</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%83%AD%E5%9B%BE/">
-                        <span class="chip bg-color">热图</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B7%AE%E5%BC%82%E5%9F%BA%E5%9B%A0/">
-                        <span class="chip bg-color">差异基因</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">
-                        <span class="chip bg-color">转录组数据可视化</span>
                     </a>
                     
                 </div>
