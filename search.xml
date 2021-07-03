@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>基于R语言的样本聚类-2</title>
+      <link href="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/"/>
+      <url>/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>上一期的文章<a href="https://chaoyuny.github.io/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/">基于R语言的样本聚类-1</a>用R语言实现了基于聚类距离的聚类树的实现，最终的结果是得到基于某个表型（比如<strong>基因表达趋势变化</strong>）的分组，在同一个分支（一类）上的两个样本有更多的相似之处，上一期的最终效果如下图：</p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703210751079-1625317673024.png" alt="image-20210703210751079" style="zoom:50%;"><p>而用于检测或发现样本间相似性的方法还有主成分分析法，相关性分析方法等。基于样本件的相关性，也可以将样本进行聚类。主成分分析的原理推荐一篇知乎文章<a href="https://zhuanlan.zhihu.com/p/99123384">前往学习</a>。今天，我们就利用R语言实现这一个分析过程并且可视化。</p><h2 id="2-R语言实现"><a href="#2-R语言实现" class="headerlink" title="2. R语言实现"></a>2. R语言实现</h2><h3 id="2-1-加载包及导入数据"><a href="#2-1-加载包及导入数据" class="headerlink" title="2.1 加载包及导入数据"></a>2.1 加载包及导入数据</h3><p>本次所用到的包<strong>ggcorrplot+openxlsx</strong>，不会安装包的<a href="https://chaoyuny.github.io/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/">戳我学习</a>，里面有安装包的办法，这里就不多说了。</p><pre class="line-numbers language-ba" data-language="ba"><code class="language-ba">rm(list &#x3D; ls()) # 清空环境变量library(ggcorrplot) # 加载包library(openxlsx) # 加载包<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h4 id="2-1-1导入数据"><a href="#2-1-1导入数据" class="headerlink" title="2.1.1导入数据"></a>2.1.1导入数据</h4><pre class="line-numbers language-ba" data-language="ba"><code class="language-ba">load(&#39;MydataforStringTie.Rdata&#39;) # 该数据是我的一个数据集，里面包含很多数据，你不必纠结他是干什么的含有什么的，你只需要知道你需要一个下面的“dat&quot;内容的数据框即可！dat&#x3D;GeneCounts # 赋值head(dat,6) # 查看数据框前6行，其实默认的也是6行names(dat) # 查看数据框的名字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>数据格式如下：</p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703212138520.png" alt="image-20210703212138520" style="zoom: 80%;"><h4 id="2-1-2-计算相关系数及其显著性"><a href="#2-1-2-计算相关系数及其显著性" class="headerlink" title="2.1.2 计算相关系数及其显著性"></a>2.1.2 计算相关系数及其显著性</h4><pre class="line-numbers language-b" data-language="b"><code class="language-b">corr&#x3D;round(cor(dat[,]),2) # Calculate the correlation coefficientp.mat&#x3D;cor_pmat(dat)# Calculate the significance of correlation coefficient<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>样本相关性结果如下：</p><p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703212228561-1625318550132.png" alt="image-20210703212228561"></p><p>由于数据量的问题，我的数据没能检验相关额显著性，如下:</p><p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703212334088-1625318615478.png" alt="image-20210703212334088"></p><h3 id="2-2-结果可视化"><a href="#2-2-结果可视化" class="headerlink" title="2.2 结果可视化"></a>2.2 结果可视化</h3><p>准备好数据后，利用<strong>ggcorrplot</strong>函数可以对相关性的分析结果进行可视化，代码如下：</p><pre class="line-numbers language-ba" data-language="ba"><code class="language-ba">ggcorrplot(corr,           method &#x3D; &#39;square&#39;,# 显示样式，“circle&quot;是第二张图的样子           hc.order &#x3D; TRUE, # 是否聚类           type &#x3D; &#39;lower&#39;, # 上下三角           outline.color &#x3D; &#39;gray60&#39;, # 框颜色           colors &#x3D; c(&#39;green&#39;,&#39;white&#39;,&#39;blue&#39;), # 图颜色           lab &#x3D; TRUE, # 是否显示数字           lab_col &#x3D; &#39;white&#39;, # 数字颜色           lab_size &#x3D; 3, # 数字大小           p.mat &#x3D; p.mat, # 填充           insig &#x3D; &#39;blank&#39;,# 显著的黑色填充           show.diag &#x3D; TRUE, # 只显示对角线一侧           digits &#x3D; 2 #小数保留位数           )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>可视化结果如下，可以看得出来我的样本Q23是有些问题的，如果需要考虑离群值，这个样本可能是候选之一：</p><p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703212606551.png" alt="image-20210703212606551"></p><p><img src="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/image-20210703213100461-1625319061563.png" alt="image-20210703213100461"></p><p>由于这个分析基本都是在数据预处理的时候用，花里胡哨的那些我就懒得上了，如果喜欢花里胡哨的可以<a href="https://blog.csdn.net/kMD8d5R/article/details/89346052">去看这篇博文</a>。</p><p>好了，今天就更新到这儿，下一期我们更新基于PCA分析的样本聚类。</p><p>记得打赏哟，白嫖我来你家吃饭！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> R语言专栏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R语言 </tag>
+            
+            <tag> 聚类分析 </tag>
+            
+            <tag> 数据分析 </tag>
+            
+            <tag> 生物信息学 </tag>
+            
+            <tag> 转录组数据 </tag>
+            
+            <tag> PCA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于R语言的样本聚类-1</title>
       <link href="/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/"/>
       <url>/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/</url>
