@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>全速上传测序数据至NCBI数据库</title>
+      <link href="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/"/>
+      <url>/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/</url>
+      
+        <content type="html"><![CDATA[<p>今天由于投稿需要，要求将测序的原始数据上传至NCBI或者ENA数据库，于是网上查了半天教程，似乎讲得都不怎么完全，对于第一次接触的人来说还是挺不友好，于是综合各家手法，得到了今天这一套教程。</p><hr><h2 id="1-注册NCBI的账号"><a href="#1-注册NCBI的账号" class="headerlink" title="1. 注册NCBI的账号"></a>1. 注册NCBI的账号</h2><p>没有账号的点击这儿注册：<a href="https://www.ncbi.nlm.nih.gov/account/register/">点我注册</a></p><h2 id="2-登录并转到SRA"><a href="#2-登录并转到SRA" class="headerlink" title="2. 登录并转到SRA"></a>2. 登录并转到SRA</h2><p>注册完成后点击登录，登录后选择<strong>SRA数据库</strong>，并选择如下红框中的<u>Submit to SRA</u>按钮。</p><p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717201429477-1626524071431.png" alt="image-20210717201429477"></p><p>选择后便弹出如下窗口：最重要的是这里我们拿到一个NCBI给定的一个相当于个人的登录号一样的牌照，如下被我遮挡住的地方，直接复制这一行命令，并修改你Aspera的密钥地址（这个安装以后的路径一般默认在这儿：我忘了我是命令行自己变异的还是用conda安装的了，你们需要自己先安装这个软件。</p><pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">~&#x2F;miniconda3&#x2F;bin&#x2F;connect&#x2F;etc&#x2F;asperaweb_id_dsa.openssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717201725140-1626524246733.png" alt="image-20210717201725140"></p><h2 id="2-3-linux命令行上传数据"><a href="#2-3-linux命令行上传数据" class="headerlink" title="2.3 linux命令行上传数据"></a>2.3 linux命令行上传数据</h2><p>上传的命令如下：这是我自己的路径，你们的需要修改一下</p><pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">ascp -i ~&#x2F;miniconda3&#x2F;bin&#x2F;connect&#x2F;etc&#x2F;asperaweb_id_dsa.openssh \-QT -l1000m -k1 -d RawdataDir \ subasp@upload.ncbi.nlm.nih.gov:uploads&#x2F;email_yeah.net_QHvjADMz&#x2F;sra_data # email这一行就是NCBI给你分配的账号信息，直接拿过来用，sra_data这个是上传保存的位置# -l1000m 这个是上传最大速度为1000 M，刺激吗# -k1 这个是断点续传# -d 原始数据绝对路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>好 ，下面是上传的效果图：</p><p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717202428894-1626524670336.png" alt="image-20210717202428894"></p><p>速度超级快的呢！</p><p>现在我看Aspera也有windows版本，大家可以下载使用。可能速度就是没这么快而已！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux专栏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 转录组数据 </tag>
+            
+            <tag> R语言 </tag>
+            
+            <tag> 生物信息学 </tag>
+            
+            <tag> NCBI </tag>
+            
+            <tag> 上传数据 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WGCNA分析专栏2-网络构建与模块识别</title>
       <link href="/2021/07/15/wgcna-fen-xi-zhuan-lan-2-wang-luo-gou-jian-yu-mo-kuai-shi-bie/"/>
       <url>/2021/07/15/wgcna-fen-xi-zhuan-lan-2-wang-luo-gou-jian-yu-mo-kuai-shi-bie/</url>
@@ -123,7 +156,7 @@
       
       <categories>
           
-          <category> linux 专栏 </category>
+          <category> linux专栏 </category>
           
       </categories>
       

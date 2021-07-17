@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于R语言的样本聚类-3, 朝云老哥">
+    <meta name="keywords" content="全速上传测序数据至NCBI数据库, 朝云老哥">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于R语言的样本聚类-3 | 朝云老哥</title>
+    <title>全速上传测序数据至NCBI数据库 | 朝云老哥</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于R语言的样本聚类-3</h1>
+                    <h1 class="description center-align post-title">全速上传测序数据至NCBI数据库</h1>
                 </div>
             </div>
         </div>
@@ -443,16 +443,12 @@
                                 <span class="chip bg-color">生物信息学</span>
                             </a>
                         
-                            <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">聚类分析</span>
+                            <a href="/tags/NCBI/">
+                                <span class="chip bg-color">NCBI</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">相关性分析</span>
+                            <a href="/tags/%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">上传数据</span>
                             </a>
                         
                     </div>
@@ -463,8 +459,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E4%B8%93%E6%A0%8F/" class="post-category">
-                                R语言专栏
+                            <a href="/categories/linux%E4%B8%93%E6%A0%8F/" class="post-category">
+                                linux专栏
                             </a>
                         
                     </div>
@@ -476,21 +472,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-04
+                    2021-07-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-13
+                    2021-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    87
+                    451
                 </div>
                 
 
@@ -520,7 +516,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>上一期在文章<a target="_blank" rel="noopener" href="https://chaoyuny.github.io/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-1/">基于R语言的样本聚类-1</a>和<a target="_blank" rel="noopener" href="http://localhost:4000/2021/07/03/ji-yu-r-yu-yan-de-yang-ben-ju-lei-2/">基于R语言的样本聚类-2</a>中分别提到了用于样本聚类（样本件相似性）的两种方法，分别是<strong>聚类树</strong>和<strong>相关性分析</strong>，本期我们将使用R语言作出基于PCA分析的样本聚类。</p>
+                <p>今天由于投稿需要，要求将测序的原始数据上传至NCBI或者ENA数据库，于是网上查了半天教程，似乎讲得都不怎么完全，对于第一次接触的人来说还是挺不友好，于是综合各家手法，得到了今天这一套教程。</p>
+<hr>
+<h2 id="1-注册NCBI的账号"><a href="#1-注册NCBI的账号" class="headerlink" title="1. 注册NCBI的账号"></a>1. 注册NCBI的账号</h2><p>没有账号的点击这儿注册：<a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/account/register/">点我注册</a></p>
+<h2 id="2-登录并转到SRA"><a href="#2-登录并转到SRA" class="headerlink" title="2. 登录并转到SRA"></a>2. 登录并转到SRA</h2><p>注册完成后点击登录，登录后选择<strong>SRA数据库</strong>，并选择如下红框中的<u>Submit to SRA</u>按钮。</p>
+<p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717201429477-1626524071431.png" alt="image-20210717201429477"></p>
+<p>选择后便弹出如下窗口：最重要的是这里我们拿到一个NCBI给定的一个相当于个人的登录号一样的牌照，如下被我遮挡住的地方，直接复制这一行命令，并修改你Aspera的密钥地址（这个安装以后的路径一般默认在这儿：我忘了我是命令行自己变异的还是用conda安装的了，你们需要自己先安装这个软件。</p>
+<pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">~&#x2F;miniconda3&#x2F;bin&#x2F;connect&#x2F;etc&#x2F;asperaweb_id_dsa.openssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717201725140-1626524246733.png" alt="image-20210717201725140"></p>
+<h2 id="2-3-linux命令行上传数据"><a href="#2-3-linux命令行上传数据" class="headerlink" title="2.3 linux命令行上传数据"></a>2.3 linux命令行上传数据</h2><p>上传的命令如下：这是我自己的路径，你们的需要修改一下</p>
+<pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">ascp -i ~&#x2F;miniconda3&#x2F;bin&#x2F;connect&#x2F;etc&#x2F;asperaweb_id_dsa.openssh \
+-QT -l1000m -k1 -d RawdataDir \ 
+subasp@upload.ncbi.nlm.nih.gov:uploads&#x2F;email_yeah.net_QHvjADMz&#x2F;sra_data 
+# email这一行就是NCBI给你分配的账号信息，直接拿过来用，sra_data这个是上传保存的位置
+# -l1000m 这个是上传最大速度为1000 M，刺激吗
+# -k1 这个是断点续传
+# -d 原始数据绝对路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>好 ，下面是上传的效果图：</p>
+<p><img src="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/image-20210717202428894-1626524670336.png" alt="image-20210717202428894"></p>
+<p>速度超级快的呢！</p>
+<p>现在我看Aspera也有windows版本，大家可以下载使用。可能速度就是没这么快而已！</p>
 
                 
             </div>
@@ -547,7 +566,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/07/04/ji-yu-r-yu-yan-de-yang-ben-ju-lei-3/">http://example.com/2021/07/04/ji-yu-r-yu-yan-de-yang-ben-ju-lei-3/</a>
+                    <a href="http://example.com/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/">http://example.com/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,16 +616,12 @@
                                     <span class="chip bg-color">生物信息学</span>
                                 </a>
                             
-                                <a href="/tags/%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">聚类分析</span>
+                                <a href="/tags/NCBI/">
+                                    <span class="chip bg-color">NCBI</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">相关性分析</span>
+                                <a href="/tags/%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">上传数据</span>
                                 </a>
                             
                         </div>
@@ -776,54 +791,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/13/test/">
+                <a href="/2021/07/17/quan-su-shang-chuan-ce-xu-shu-ju-zhi-ncbi-shu-ju-ku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="全速上传测序数据至NCBI数据库">
                         
-                        <span class="card-title">test</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            This blog is encrypted.
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            chaoyuny
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/03/vscode-lian-jie-yuan-cheng-fu-wu-qi-jiao-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="VScode连接远程服务器教程">
-                        
-                        <span class="card-title">VScode连接远程服务器教程</span>
+                        <span class="card-title">全速上传测序数据至NCBI数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -834,7 +813,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-17
                             </span>
                         <span class="publish-author">
                             
@@ -848,27 +827,89 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">转录组数据</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">服务器</span>
+                    <a href="/tags/R%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">R语言</span>
                     </a>
                     
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                        <span class="chip bg-color">生物信息学</span>
                     </a>
                     
-                    <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/">
-                        <span class="chip bg-color">编辑器</span>
+                    <a href="/tags/NCBI/">
+                        <span class="chip bg-color">NCBI</span>
                     </a>
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">上传数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/15/wgcna-fen-xi-zhuan-lan-2-wang-luo-gou-jian-yu-mo-kuai-shi-bie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="WGCNA分析专栏2-网络构建与模块识别">
+                        
+                        <span class="card-title">WGCNA分析专栏2-网络构建与模块识别</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这是一篇付费文章，请为知识付费。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/WGCNA%E4%B8%93%E6%A0%8F/" class="post-category">
+                                    WGCNA专栏
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/WGCNA/">
+                        <span class="chip bg-color">WGCNA</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BD%AC%E5%BD%95%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">转录组数据</span>
+                    </a>
+                    
+                    <a href="/tags/R%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">R语言</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">
+                        <span class="chip bg-color">生物信息学</span>
                     </a>
                     
                 </div>
