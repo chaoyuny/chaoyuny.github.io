@@ -482,14 +482,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -712,7 +712,30 @@ names(annot)
 HubGenes&#x3D;merge(HubGenes,annot,by.x &#x3D; &#39;HubGenes&#39;,by.y&#x3D;&quot;ID&quot;)
 write.xlsx(HubGenes,file &#x3D; &quot;..&#x2F;result&#x2F;28.HubGenes_of_each_module.xlsx&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>至此，工作完成，后续的工作后续再说。</p>
+<p>最后，画一张GS图</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">########终极版GS柱状图
+rm(list &#x3D; ls())
+library(openxlsx)
+library(tidyverse)
+geneInfo &#x3D; read.xlsx(&quot;result&#x2F;17.geneInfo_SCC.xlsx&quot;)
+##############
+GeneSignificance&#x3D;abs(geneInfo$GS.InterestedModule)
+# Next module significance is defined as average gene significance.
+tiff(filename &#x3D; &quot;result&#x2F;GeneSignificance(SCC).tiff&quot;,
+     width &#x3D; 8, 
+     height &#x3D; 4,
+     units &#x3D; &#39;in&#39;,
+     res &#x3D; 600)
+par(mfrow &#x3D; c(1,1))
+plotModuleSignificance(GeneSignificance,
+                       geneInfo$moduleColor,
+                       main &#x3D; &quot;Gene significance across modules in SCC\n&quot;
+                       )
+dev.off()
+?plotModuleSignificance<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/07/18/wgcna-fen-xi-zhuan-lan-3-biao-xing-guan-lian-ji-ke-shi-hua-yu-chong-yao-ji-yin-shi-bie/image-20210807092648123-16282996093141.png" alt="image-20210807092648123"></p>
+<p>至此，WGCNA的分析的工作完成，进一步的分析就仁者见仁了。</p>
 
                 
             </div>
@@ -1264,7 +1287,7 @@ write.xlsx(HubGenes,file &#x3D; &quot;..&#x2F;result&#x2F;28.HubGenes_of_each_mo
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">13.1k</span>&nbsp;字
             
             
             
