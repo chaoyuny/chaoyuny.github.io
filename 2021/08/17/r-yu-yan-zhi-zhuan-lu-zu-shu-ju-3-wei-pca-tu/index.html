@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="R语言之-转录组数据3维PCA图, 朝云老哥">
+    <meta name="keywords" content="R语言之-转录组数据3维PCA图及相关性热图, 朝云老哥">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>R语言之-转录组数据3维PCA图 | 朝云老哥</title>
+    <title>R语言之-转录组数据3维PCA图及相关性热图 | 朝云老哥</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">R语言之-转录组数据3维PCA图</h1>
+                    <h1 class="description center-align post-title">R语言之-转录组数据3维PCA图及相关性热图</h1>
                 </div>
             </div>
         </div>
@@ -450,21 +450,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2021-10-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    264
+                    668
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -487,20 +487,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rm(list &#x3D; ls())
+                <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Steps_1_Correlation_Between_Samples~~~~~~~~~~~~~~~~~~~~~~~#
+rm(list &#x3D; ls())
 workingDir &#x3D; &quot;.&quot;;
 setwd(workingDir); 
 library(ggcorrplot)
 library(openxlsx)
+library(ComplexHeatmap)
+library(ggplot2)
+library(corrplot)
 # loading data
-TPM &#x3D; read.xlsx(&quot;..&#x2F;TPM.xlsx&quot;,sheet &#x3D; 1)
-rownames(TPM) &lt;- TPM$ID
-names(TPM)
-dat &#x3D; TPM[,7:16]
+
+dat&#x3D;read.csv(&quot;..&#x2F;Data&#x2F;Angus.Rumen.Tpm.csv&quot;,row.names &#x3D; 1)
 head(dat,6)
 names(dat)
+corr&#x3D;round(cor(dat[,]),2) # Calculate the correlation coefficient
 
-# PCA
+res1 &lt;- cor.mtest(dat, conf.level &#x3D; .95) 
+corrplot(corr, p.mat &#x3D; res1$p, sig.level &#x3D; .01)
+
+## 设置不显著的空白
+corrplot(corr, p.mat &#x3D; res1$p, insig &#x3D; &quot;blank&quot;)
+
+## 设置不显著的显示p值
+corrplot(corr, p.mat &#x3D; res1$p, insig &#x3D; &quot;p-value&quot;)
+
+## 显示所有p值
+corrplot(corr, p.mat &#x3D; res1$p, insig &#x3D; &quot;p-value&quot;, sig.level &#x3D; -1)
+
+## 用 * 数量代表显示性
+corrplot(corr, p.mat &#x3D; res1$p, insig &#x3D; &quot;label_sig&quot;,
+         sig.level &#x3D; c(.001, .01, .05), pch.cex &#x3D; .9,  pch.col &#x3D; &quot;black&quot;)
+tiff(filename &#x3D; &quot;..&#x2F;Results&#x2F;1.Rumen.cor.tiff&quot;,
+     width &#x3D; 3, 
+     height &#x3D; 3,
+     units &#x3D; &#39;in&#39;,
+     res &#x3D; 600,
+     pointsize &#x3D; 5)
+corrplot(corr, 
+         method &#x3D; &quot;pie&quot;,
+         order &#x3D; &quot;AOE&quot;,
+         hclust.method &#x3D; &quot;ward.D2&quot;,
+         addrect &#x3D; 4,
+         rect.col &#x3D; &quot;blue&quot;,
+         p.mat &#x3D; res1$p, insig &#x3D; &quot;label_sig&quot;,
+         sig.level &#x3D; c(.001, .01, .05), 
+         pch.cex &#x3D; .9,  
+         pch.col &#x3D; &quot;white&quot;,
+         tl.col &#x3D; &quot;black&quot;,
+         tl.cex &#x3D; 1,tl.srt&#x3D;60
+         )
+corrplot(corr,add&#x3D;TRUE, type&#x3D;&quot;lower&quot;, 
+         method&#x3D;&quot;number&quot;,
+         order&#x3D;&quot;AOE&quot;,
+         diag&#x3D;FALSE,
+         tl.pos&#x3D;&quot;n&quot;, 
+         cl.pos&#x3D;&quot;n&quot;)
+dev.off()
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Steps_1_PCA_Between_Samples~~~~~~~~~~~~~~~~~~~~~~~#
+
+
+
+## PCA
 library(gmodels)
 pca&#x3D; fast.prcomp(dat[,])
 pca$rotation
@@ -508,50 +563,81 @@ pca$rotation
 colnames(dat)
 library(scatterplot3d)
 pca_info&#x3D; data.frame(sample &#x3D; row.names(pca$rotation),
-                     Type&#x3D;c(rep(&#39;LRFI&#39;,5),rep(&#39;HRFI&#39;,5)),
+                     Type&#x3D;c(rep(&#39;LRFI&#39;,8),rep(&#39;HRFI&#39;,7)),
                      pca$rotation)
-# shapes
-shapes_group &#x3D; levels(factor(pca_info$Type))
-bioshapes &#x3D; c(17,19)
-shapes &#x3D; bioshapes[match(pca_info$Type,shapes_group)]
 
-#颜色
-color_group&#x3D;levels(factor(pca_info$Type))
-bioCol&#x3D;c(&quot;red&quot;,&quot;blue&quot;)
-colors&#x3D; bioCol[match(pca_info$Type,color_group)]
+
+
+# colors and shapes
+colors &#x3D; c(rep(&#39;#CC0000&#39;,8),rep(&#39;#1d419b&#39;,7)) 
+shapes &#x3D; c(rep(16,8),rep(17,7))
+
 ###############################################
 getwd()
-tiff(filename &#x3D; &quot;PCA12.tiff&quot;,
-     width &#x3D; 5,
-     height &#x3D; 4.5,
-     units &#x3D; &quot;in&quot;,
-     pointsize &#x3D; 7,
-     res &#x3D; 600)
+tiff(filename &#x3D; &quot;..&#x2F;Results&#x2F;1.Rumen.3D.pca.tiff&quot;,
+     width &#x3D; 4, 
+     height &#x3D; 3,
+     units &#x3D; &#39;in&#39;,
+     res &#x3D; 600,
+     pointsize &#x3D; 5)
 s3d &lt;- scatterplot3d(pca$rotation[,c(1:3)],
-                     main&#x3D;&#39;PCA for 10 samples&#39;,
+                     main&#x3D;&#39;PCA IMAGE&#39;,
                      color&#x3D;colors,
                      pch&#x3D;shapes,
                      type&#x3D;&#39;p&#39;,
                      highlight.3d&#x3D;F,
-                     angle&#x3D;-225,
+                     angle&#x3D;-60,
                      grid&#x3D;T,
                      box&#x3D;T,
                      scale.y&#x3D;1,
                      cex.symbols&#x3D;1.5,
                      col.grid&#x3D;&#39;lightblue&#39;)
-legend(&#39;topright&#39;,
-       legend &#x3D; levels(factor(pca_info$Type)),
-       col &#x3D; bioCol,
-       pch &#x3D; bioshapes,
-       inset &#x3D; 0,
+legend(&#39;bottom&#39;,legend &#x3D; unique(pca_info$Type),
+       col &#x3D; unique(colors),
+       pch &#x3D; unique(shapes),
+       inset &#x3D; -0.25,
        xpd &#x3D; TRUE,
        horiz &#x3D; TRUE)
-text(s3d$xyz.convert(pca_info[,c(&#39;PC1&#39;,&#39;PC2&#39;,&#39;PC3&#39;)]+0.02),
+text(s3d$xyz.convert(pca_info[,c(&#39;PC1&#39;,&#39;PC2&#39;,&#39;PC3&#39;)]+0.01),
      labels &#x3D; pca_info$sample,
      cex &#x3D; 0.8,
      col &#x3D; colors)
-dev.off()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+dev.off()
+?pch
+## plots from different angles
+pca.plot &lt;- function(ang)&#123;
+        scatterplot3d(pca$rotation[,c(1:3)],
+                      main&#x3D;&#39;PCA IMAGE&#39;,
+                      color&#x3D;colors,
+                      type&#x3D;&#39;p&#39;,
+                      highlight.3d&#x3D;F,
+                      angle&#x3D;ang,
+                      grid&#x3D;T,
+                      box&#x3D;T,
+                      scale.y&#x3D;1,
+                      cex.symbols&#x3D;1.5,
+                      pch&#x3D;shapes,
+                      col.grid&#x3D;&#39;lightblue&#39;)
+        legend(&#39;bottom&#39;,legend &#x3D; unique(pca_info$Type),
+               col &#x3D; unique(colors),
+               pch &#x3D; unique(shapes),
+               inset &#x3D; -0.25,
+               xpd &#x3D; TRUE,
+               horiz &#x3D; TRUE)
+        text(s3d$xyz.convert(pca_info[,c(&#39;PC1&#39;,&#39;PC2&#39;,&#39;PC3&#39;)]+0.01),
+             labels &#x3D; pca_info$sample,
+             cex &#x3D; 0.8,
+             col &#x3D; colors)
+&#125;
+pdf(&quot;..&#x2F;Results&#x2F;&#x2F;1.Rumen.PCA.pdf&quot;,height &#x3D; 6,width &#x3D; 6)
+sapply(seq(-360,360,5),
+       pca.plot)
+dev.off()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>数据格式：</p>
+<p><img src="/2021/08/17/r-yu-yan-zhi-zhuan-lu-zu-shu-ju-3-wei-pca-tu/image-20211009171226918-16337707485421.png" alt="image-20211009171226918"></p>
+<p><img src="/2021/08/17/r-yu-yan-zhi-zhuan-lu-zu-shu-ju-3-wei-pca-tu/image-20211009170926446-16337705683331.png" alt="image-20211009170926446"></p>
+<p><img src="/2021/08/17/r-yu-yan-zhi-zhuan-lu-zu-shu-ju-3-wei-pca-tu/image-20211009171022249-16337706247772.png" alt="image-20211009171022249"></p>
 
                 
             </div>
@@ -847,8 +933,8 @@ dev.off()<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E4%B8%93%E6%A0%8F/" class="post-category">
-                                    R语言专栏
+                            <a href="/categories/R%E8%AF%AD%E8%A8%80%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%93%E6%A0%8F/" class="post-category">
+                                    R语言可视化专栏
                                 </a>
                             
                             
@@ -1065,7 +1151,7 @@ dev.off()<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.5k</span>&nbsp;字
+                class="white-color">3.9k</span>&nbsp;字
             
             
             
