@@ -387,6 +387,29 @@
     
     
     <entry>
+      <title>How to build a private blog</title>
+      <link href="/2021/07/02/how-to-build-a-private-blog/"/>
+      <url>/2021/07/02/how-to-build-a-private-blog/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-Software-install"><a href="#1-Software-install" class="headerlink" title="1 Software install"></a>1 Software install</h2><p>1.1 Nodejs,<a href="https://nodejs.org/dist/v14.17.1/node-v14.17.1-x64.msi">click here to download</a><br>1.2 Git,<a href="https://git-scm.com/downloads">click here to download</a></p><h2 id="2-Construct"><a href="#2-Construct" class="headerlink" title="2 Construct"></a>2 Construct</h2><h3 id="2-1-Run-in-“Git”"><a href="#2-1-Run-in-“Git”" class="headerlink" title="2.1 Run in “Git”"></a>2.1 Run in “Git”</h3><p>Check the version for node and npm</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo node -v$ hexo npm -v$ npm install # 切换到自己博客的目录下并执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="2-2-Install-the-“cnpm”-and-“hexo-cli”"><a href="#2-2-Install-the-“cnpm”-and-“hexo-cli”" class="headerlink" title="2.2 Install the “cnpm” and “hexo-cli”"></a>2.2 Install the “cnpm” and “hexo-cli”</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org$ hexo cnpm -v$ cnpm install -g hexo-cli$ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="2-3-constract-a-local-service-for-“Myblog”"><a href="#2-3-constract-a-local-service-for-“Myblog”" class="headerlink" title="2.3 constract a local service for “Myblog”"></a>2.3 constract a local service for “Myblog”</h3><p>To construct and start a “Myblog”</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ mkdir Myblog$ cd Myblog$ hexo init #初始化自己的博客$ hexo s # 运行自己的博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>Check “Myblog” in browser with the below address</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ http:&#x2F;&#x2F;localhost:4000&#x2F; #可以直接在浏览器中打开刚刚的博客<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>Write a article</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo n filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>To update the content for “Myblog”</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean$ hexo g$ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>###2.4 Create a blog home based on Github</p><p>Fist,Create a new  respository “YourGithubName.github.io”</p><p>Second, install a “git” plugin</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install --save hexo-deployer-git # 必须要安装该插件才可以部署到github<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>Third, Configure the file “config.yml” in your dir for Myblog as followings</p><h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master<br>Fourth, if your PC is Win10,you should execute these codes</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ cnpm install --save hexo-deployer-git # install deployer for uploading$ git config --global user.email xxx$ git config --global user.name xxx$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="3-beautify-your-blog-layout"><a href="#3-beautify-your-blog-layout" class="headerlink" title="3 beautify your blog layout"></a>3 beautify your blog layout</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia$ hexo c$ hexo g$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>Note: you should modify the file “config.yml” as below:</p><p>theme: yilia</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> study </tag>
+            
+            <tag> knowledge </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用R语言如何画一张漂亮的热图</title>
       <link href="/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/"/>
       <url>/2021/06/29/ru-he-hui-zhi-piao-liang-re-tu/</url>
